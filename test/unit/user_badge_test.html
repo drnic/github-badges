@@ -58,7 +58,7 @@
     
     "test that footer displayed": function() { with(this) {
       assertEqual(1, badge.find('.footer').size());
-      var expected = 'Powered by <a href="http://github.com">GitHub</a> | Written by <a href="http://drnicwilliams.com">Dr Nic</a>';
+      var expected = '<a href="http://drnicjavascript.rubyforge.org/github_badge">Badge</a> powered by <a href="http://github.com">GitHub</a> | Written by <a href="http://drnicwilliams.com">Dr Nic</a>';
       assertEqual(expected, $('div#github-badge .footer').html());
     }}
   }, {testLog: "testlog"}); 

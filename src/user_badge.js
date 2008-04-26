@@ -74,7 +74,8 @@ GitHubBadge.compareReposProperty = function(repo1, repo2, property) {
   $.fn.buildFooter = function() {
     return this.append($(
       "<div class='footer'>"
-        + "Powered by <a href='http://github.com'>GitHub</a> | "
+        + "<a href='http://drnicjavascript.rubyforge.org/github_badge'>Badge</a> "
+        + "powered by <a href='http://github.com'>GitHub</a> | "
         + "Written by <a href='http://drnicwilliams.com'>Dr Nic</a>"
       + "</div>"
       + "</fieldset>"
