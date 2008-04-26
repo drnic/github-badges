@@ -21,7 +21,8 @@ GitHubBadge.buildUserBadge = function() {
   
   $.fn.buildHeader = function(title) {
     this.append($(
-      "<div class='header'>" + title + "</div>"
+      "<fieldset>"
+      + "<legend class='header'>" + title + "</legend>"
       ));
   };
 
@@ -31,6 +32,7 @@ GitHubBadge.buildUserBadge = function() {
         + "Powered by <a href='http://github.com'>GitHub</a> | "
         + "Written by <a href='http://drnicwilliams.com'>Dr Nic</a>"
       + "</div>"
+      + "</fieldset>"
       ));
   };
 })(jQuery); 
