@@ -1,8 +1,8 @@
-/*  Github Badges, version <%= APP_VERSION %>
+/*  GitHub Badge, version <%= APP_VERSION %>
  *  (c) 2008 Dr Nic Williams
  *
- *  Github Badges is freely distributable under 
+ *  GitHub Badge is freely distributable under 
  *  the terms of an MIT-style license.
- *  For details, see the web site: http://NOTE-ENTER-URL.com
+ *  For details, see the web site: http://github.com/drnic/github-badges/tree/master
  *
  *--------------------------------------------------------------------------*/
