@@ -39,6 +39,7 @@
 }
 
 #github-badge .repos img {
+  padding-right: .2em;
   vertical-align: middle;
 }
 

@@ -62,9 +62,9 @@ GitHubBadge.compareReposProperty = function(repo1, repo2, property) {
   
   $.fn.buildHeader = function(title, username) {
     var template = $.template(
-      "<legend class='header'>${title} <span>("
+      "<div class='header'><strong>${title}</strong> <span>("
       +   "<a href='http://github.com/${username}'>${username}</a>)"
-      + "</span></legend>")
+      + "</span></div>")
     return this.append(template, { title: title, username: username });
   };
 
