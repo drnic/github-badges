@@ -13,9 +13,11 @@ require 'rake/packagetask'
 $:.unshift File.dirname(__FILE__) + "/lib"
 
 APP_VERSION  = '0.1.0'
-APP_NAME     = 'github_badge'
+APP_NAME     = 'github-badge'
 RUBYFORGE_PROJECT = 'drnicjavascript'
 APP_FILE_NAME= "#{APP_NAME}.js"
+APP_BADGE_NAME= "#{APP_NAME}-launcher"
+APP_BADGE_FILE_NAME= "#{APP_NAME}-launcher.js.erb"
 
 APP_ROOT     = File.expand_path(File.dirname(__FILE__))
 APP_SRC_DIR  = File.join(APP_ROOT, 'src')
@@ -38,14 +40,20 @@ task :dist do
     File.open(File.join(APP_DIST_DIR, APP_FILE_NAME), 'w+') do |dist|
       dist << Protodoc::Preprocessor.new(APP_FILE_NAME)
     end
+    File.open(File.join(APP_DIST_DIR, "#{APP_BADGE_NAME}.js"), 'w+') do |dist|
+      dist << Protodoc::Preprocessor.new(APP_BADGE_FILE_NAME)
+    end
   end
   Dir.chdir(APP_DIST_DIR) do
     FileUtils.copy_file APP_FILE_NAME, "#{APP_NAME}-#{APP_VERSION}.js"
+    FileUtils.copy_file "#{APP_BADGE_NAME}.js", "#{APP_BADGE_NAME}-#{APP_VERSION}.js"
   end
   if File.directory?("website")
     FileUtils.mkdir_p "website/dist"
     FileUtils.copy_file "dist/#{APP_FILE_NAME}",       "website/dist/#{APP_FILE_NAME}"
     FileUtils.copy_file "dist/#{APP_FILE_NAME}",       "website/dist/#{APP_NAME}-#{APP_VERSION}.js"
+    FileUtils.copy_file "dist/#{APP_BADGE_NAME}.js", "website/dist/#{APP_BADGE_FILE_NAME}"
+    FileUtils.copy_file "dist/#{APP_BADGE_NAME}.js", "website/dist/#{APP_BADGE_NAME}-#{APP_VERSION}.js"
   end
 end
 
