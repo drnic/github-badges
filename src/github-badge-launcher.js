@@ -6,6 +6,11 @@ GitHubBadge.Launcher = new function() {
     onLoadStr = (typeof callback == "undefined") ? "" : 'onload="' + callback + '()"';
     document.write('<script ' + onLoadStr + 'type="text/javascript" src="'+url+'"></script>');
   }
+  
+  function requestStylesheet( url ) {
+    document.write('<link rel="stylesheet" href="'+url+'" type="text/css"></link>');
+  }
+  
 
   function basePath() {
     var scripts = document.getElementsByTagName("script");
@@ -22,6 +27,7 @@ GitHubBadge.Launcher = new function() {
         [typeof jQuery != "undefined" && typeof jQuery.template, "ext/jquery.template"],
         [false, "github-badge"]
       ];
+    var stylesheets = ['ext/stylesheets/badge'];
     var scripts = document.getElementsByTagName("script");
     for (var i=0; i < scripts.length; i++) {
       if (scripts[i].src && scripts[i].src.match(/github-badge-launcher\.js(\?.*)?/)) {
@@ -39,6 +45,9 @@ GitHubBadge.Launcher = new function() {
         break;
       }
     }
+    for (var i=0; i < stylesheets.length; i++) {
+      requestStylesheet(basePath() + stylesheets[i] + ".css");
+    };
   }
 
   this.loadedLibraries = function() {

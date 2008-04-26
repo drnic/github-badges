@@ -49,12 +49,13 @@ task :dist do
     FileUtils.copy_file "#{APP_BADGE_NAME}.js", "#{APP_BADGE_NAME}-#{APP_VERSION}.js"
   end
   if File.directory?("website")
+    FileUtils.rm_rf "website/dist" rescue nil
     FileUtils.mkdir_p "website/dist"
     FileUtils.copy_file "dist/#{APP_FILE_NAME}",       "website/dist/#{APP_FILE_NAME}"
     FileUtils.copy_file "dist/#{APP_FILE_NAME}",       "website/dist/#{APP_NAME}-#{APP_VERSION}.js"
     FileUtils.copy_file "dist/#{APP_BADGE_NAME}.js", "website/dist/#{APP_BADGE_NAME}.js"
     FileUtils.copy_file "dist/#{APP_BADGE_NAME}.js", "website/dist/#{APP_BADGE_NAME}-#{APP_VERSION}.js"
-    FileUtils.cp_r("src/ext", "website/dist/ext")
+    FileUtils.cp_r "src/ext", "website/dist/ext"
   end
 end
 
