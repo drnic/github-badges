@@ -14,8 +14,12 @@
   text-decoration: underline;
 }
 
-#github-badge .header {
+#github-badge div.header {
   font: 16px "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;
+}
+
+#github-badge .header span {
+  font: 15px "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;
 }
 
 #github-badge .footer {
