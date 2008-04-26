@@ -9,6 +9,11 @@ of the unit tests + the sample badge below.
 
 <div><a href="http://skitch.com/drnic/keqx/github-badge-new-look-n-feel"><img src="http://img.skitch.com/20080426-jisygbfprs2wntu7fnngs1f7wm.jpg" alt="github badge: new look-n-feel" /></a></div>
 
+Live Demo
+=========
+
+See the project website: [http://drnicjavascript.rubyforge.org/github_badge](http://drnicjavascript.rubyforge.org/github_badge)
+
 Usage
 =====
 
@@ -19,7 +24,12 @@ the following snippet into your blog sidebar.
       GITHUB_USERNAME="drnic";
     </script>
     <script src="http://drnicjavascript.rubyforge.org/github_badge/dist/github-badge-launcher.js" type="text/javascript"></script>
-    
+
+Website
+=======
+
+[http://drnicjavascript.rubyforge.org/github_badge](http://drnicjavascript.rubyforge.org/github_badge)
+
 Author
 ======
 
