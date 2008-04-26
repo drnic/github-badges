@@ -19,9 +19,28 @@ GitHubBadge.loadUserInfo = function(data) {
   $('#github-badge .body')
     .empty()
     .append(list); // TODO - reuse GitHubBadge variable for container
-  $.each(data.user.repositories, function(index) {
+  orderedRepos = data.user.repositories.sort(GitHubBadge.compareRepos)
+  $.each(orderedRepos, function(index) {
     list.append(template, this);
   });
+};
+
+GitHubBadge.compareRepos = function(repo1, repo2) {
+  var properties = ['network', 'watched'];
+  for (var i=0; i < properties.length; i++) {
+    var comparison = GitHubBadge.compareReposProperty(repo1, repo2, properties[i]);
+    if (comparison != 0) return comparison;
+  };
+  return 0;
+};
+
+GitHubBadge.compareReposProperty = function(repo1, repo2, property) {
+  if ((property in repo1) && !(property in repo2)) return -1;
+  if (!(property in repo1) && (property in repo2)) return 1;
+  if ((property in repo1) && (property in repo2)) {
+    return repo2[property] - repo1[property];
+  }
+  return 0;
 };
 
 (function($){
