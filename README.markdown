@@ -18,7 +18,7 @@ the following snippet into your blog sidebar.
     <script type="text/javascript" charset="utf-8">
       GITHUB_USERNAME="drnic";
     </script>
-    <script src="dist/github-badge-launcher.js" type="text/javascript"></script>
+    <script src="http://drnicjavascript.rubyforge.org/github_badge/dist/github-badge-launcher.js" type="text/javascript"></script>
     
 Author
 ======

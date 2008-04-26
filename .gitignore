@@ -1,3 +1,4 @@
 dist/*
 website/dist/*
 pkg/*
+config/*.yml
