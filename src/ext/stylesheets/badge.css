@@ -1,9 +1,9 @@
 #github-badge {
-  
 }
 
-#github-badge .body {
-  
+#github-badge .body ul {
+  list-style-type: none;
+  padding: 0px;
 }
 
 #github-badge .header {
