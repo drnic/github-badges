@@ -10,8 +10,10 @@ demonstration of the badge.
 
 h2. Installation
 
-<pre syntax="html"><script type="text/javascript" charset="utf-8">
+<pre syntax="html"><div id="github-badge"></div>
+<script type="text/javascript" charset="utf-8">
   GITHUB_USERNAME="drnic";
+  GITHUB_HEAD="h2"; // default is <div>
 </script>
 <script src="http://drnicjavascript.rubyforge.org/github_badge/dist/github-badge-launcher.js" type="text/javascript"></script>
 </pre>

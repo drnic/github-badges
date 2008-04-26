@@ -20,8 +20,10 @@ Usage
 It is expected that to use the widget, you will copy + paste + modify
 the following snippet into your blog sidebar.
 
+    <div id="github-badge"></div>
     <script type="text/javascript" charset="utf-8">
       GITHUB_USERNAME="drnic";
+      GITHUB_HEAD="h2"; // default is <div>
     </script>
     <script src="http://drnicjavascript.rubyforge.org/github_badge/dist/github-badge-launcher.js" type="text/javascript"></script>
 
