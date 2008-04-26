@@ -11,30 +11,32 @@ GitHubBadge.buildUserBadge = function(username) {
 };
 
 GitHubBadge.loadUserInfo = function(data) {
-  var template = $.template(
-    "<li class='public'>"
-    +  "<img src='http://github.com/images/icons/public.png' alt='public'>"
-    +  "<strong><a href='${url}'>${name}</a></strong>"
-    +"</li>"
-  );
-  var showMore = $("<div><a href='#' class='more'>Show more</a></div>")
-    .find('a')
-    .click(function(event) { 
-      $('#github-badge .body li').show(); 
-      $('#github-badge .more').hide();
-      return false;
+  (function($){ 
+    var template = $.template(
+      "<li class='public'>"
+      +  "<img src='http://github.com/images/icons/public.png' alt='public'>"
+      +  "<strong><a href='${url}'>${name}</a></strong>"
+      +"</li>"
+    );
+    var showMore = $("<div><a href='#' class='more'>Show more</a></div>")
+      .find('a')
+      .click(function(event) { 
+        $('#github-badge .body li').show(); 
+        $('#github-badge .more').hide();
+        return false;
+      });
+    var list = $("<div class='repos'><ul id='repo_listing'></ul></div>");
+    $('#github-badge .body')
+      .empty()
+      .append(list)
+      .append(showMore); 
+    list = list.find('ul');
+    orderedRepos = data.user.repositories.sort(GitHubBadge.compareRepos)
+    $.each(orderedRepos, function(index) {
+      list.append(template, this);
     });
-  var list = $("<div class='repos'><ul id='repo_listing'></ul></div>");
-  $('#github-badge .body')
-    .empty()
-    .append(list)
-    .append(showMore); 
-  list = list.find('ul');
-  orderedRepos = data.user.repositories.sort(GitHubBadge.compareRepos)
-  $.each(orderedRepos, function(index) {
-    list.append(template, this);
-  });
-  $('#github-badge .body li:gt(9)').hide(); // hide extras
+    $('#github-badge .body li:gt(9)').hide(); // hide extras
+  })(jQuery); 
 };
 
 GitHubBadge.compareRepos = function(repo1, repo2) {
