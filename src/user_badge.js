@@ -1,12 +1,11 @@
 var GitHubBadge = GitHubBadge || {};
 GitHubBadge.buildUserBadge = function(username) {
-  var badge = $('#' + (arguments[1] || 'github-badge'));
   (function($){ 
-    badge
+    $('#github-badge')
       .empty()
       .buildHeader("My projects", username)
-      .buildBody(username);
-    badge.buildFooter();
+      .buildBody(username)
+      .buildFooter();
   })(jQuery); 
 };
 
@@ -17,10 +16,18 @@ GitHubBadge.loadUserInfo = function(data) {
     +  "<strong><a href='${url}'>${name}</a></strong>"
     +"</li>"
   );
+  var showMore = $("<div><a href='#' class='more'>Show more</a></div>")
+    .find('a')
+    .click(function(event) { 
+      $('#github-badge .body li').show(); 
+      $('#github-badge .more').hide();
+      return false;
+    });
   var list = $("<div class='repos'><ul id='repo_listing'></ul></div>");
   $('#github-badge .body')
     .empty()
-    .append(list); // TODO - reuse GitHubBadge variable for container
+    .append(list)
+    .append(showMore); 
   list = list.find('ul');
   orderedRepos = data.user.repositories.sort(GitHubBadge.compareRepos)
   $.each(orderedRepos, function(index) {

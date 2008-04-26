@@ -29,6 +29,8 @@
   <!-- Log output (one per Runner, via {testLog: "testlog"} option)-->
   <div id="testlog"></div>
   
+  <div id="testlog-showdata"></div>
+  
   <div id="errorlog"></div>
   
   <!-- Put sample/test html here -->
@@ -42,7 +44,6 @@
 <script type="text/javascript">
 // <![CDATA[
   new Test.Unit.Runner({
-    // replace this with your real tests
     setup: function() {
       GitHubBadge.buildUserBadge("drnic");
       this.badge = $('div#github-badge');
@@ -60,21 +61,35 @@
       var expected = 'Powered by <a href="http://github.com">GitHub</a> | Written by <a href="http://drnicwilliams.com">Dr Nic</a>';
       assertEqual(expected, $('div#github-badge .footer').html());
     }},
+  }, {testLog: "testlog"}); 
 
-    "test that recent projects displayed": function() { with(this) {
-      // $.getScript("file://../fixtures/mocked_user_data.js");
+  new Test.Unit.Runner({
+    setup: function() {
+      GitHubBadge.buildUserBadge("drnic");
+      this.badge = $('div#github-badge');
       GitHubBadge.loadUserInfo(GitHubBadge.mockedUserData);
+    },
+    
+    "test that recent projects displayed": function() { with(this) {
       var projects = badge.find('.repos ul#repo_listing li a');
       assert(projects.size() > 0, 'Should be some projects');
-      assertEqual(10, $('.body li:visible').size());
+      assertEqual(10, badge.find('.body li:visible').size());
       assertEqual("ruby-on-rails-tmbundle", projects.filter(':eq(0)').html());
       assertEqual("javascript-unittest-tmbundle", projects.filter(':eq(1)').html());
       assertEqual("newjs", projects.filter(':eq(2)').html());
     }},
 
+    "test that 'show remaining' unhides remaining projects": function() { with(this) {
+      var link = $('#github-badge a.more');
+      assertEqual(1, link.size());
+      assertEqual(10, badge.find('.body li:visible').size());
+      link.click();
+      assertEqual(badge.find('.body li').size(), badge.find('.body li:visible').size());
+    }},
+
     
       
-  }, {testLog: "testlog"}); 
+  }, {testLog: "testlog-showdata"}); 
   // For each Test.UnitRunner instance, specify the element id where results will be
   // published; e.g. <div id="testlog"/> above.
   // That is, you can have multiple "new Test.Unit.Runner() { ... }" on this page, just
