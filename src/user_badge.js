@@ -4,7 +4,7 @@ GitHubBadge.buildUserBadge = function() {
   (function($){ 
     $(document).ready(function() {
       $(container).empty();
-      $(container).buildHeader();
+      $(container).buildHeader("My projects");
       $(container).buildBody();
       $(container).buildFooter();
     });
@@ -19,9 +19,9 @@ GitHubBadge.buildUserBadge = function() {
       ));
   };
   
-  $.fn.buildHeader = function() {
+  $.fn.buildHeader = function(title) {
     this.append($(
-      "<div class='header'>My projects</div>"
+      "<div class='header'>" + title + "</div>"
       ));
   };
 
