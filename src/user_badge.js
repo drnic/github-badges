@@ -23,6 +23,7 @@ GitHubBadge.loadUserInfo = function(data) {
   $.each(orderedRepos, function(index) {
     list.append(template, this);
   });
+  $('#github-badge .body li:gt(9)').hide(); // hide extras
 };
 
 GitHubBadge.compareRepos = function(repo1, repo2) {
