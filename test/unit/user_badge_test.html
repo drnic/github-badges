@@ -6,7 +6,6 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
   <script src="../assets/jsunittest.js" type="text/javascript"></script>
   <script src="../../src/ext/jquery.js"></script>
-  <script src="../../src/ext/jquery.sort.js"></script>
   <script src="../../src/ext/jquery.template.js"></script>
   
   <script src="../../src/user_badge.js" type="text/javascript"></script>
@@ -65,7 +64,7 @@
     "test that recent projects displayed": function() { with(this) {
       // $.getScript("file://../fixtures/mocked_user_data.js");
       GitHubBadge.loadUserInfo(GitHubBadge.mockedUserData);
-      var projects = badge.find('.body li a');
+      var projects = badge.find('.repos ul#repo_listing li a');
       assert(projects.size() > 0, 'Should be some projects');
       assertEqual(10, $('.body li:visible').size());
       assertEqual("ruby-on-rails-tmbundle", projects.filter(':eq(0)').html());
