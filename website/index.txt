@@ -18,6 +18,10 @@ h2. Installation
 <script src="http://drnicjavascript.rubyforge.org/github_badge/dist/github-badge-launcher.js" type="text/javascript"></script>
 </pre>
 
+h2. Existing installations/demonstrations
+
+* "Dr Nic Williams":http://drnicwilliams.com
+
 h2. Forum
 
 "http://groups.google.com/group/github":http://groups.google.com/group/github
