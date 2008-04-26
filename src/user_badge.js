@@ -1,13 +1,11 @@
 var GitHubBadge = GitHubBadge || {};
-GitHubBadge.buildUserBadge = function() {
-  var container = '#' + (arguments[0] || 'github-badge');
+GitHubBadge.buildUserBadge = function(username) {
+  var container = '#' + (arguments[1] || 'github-badge');
   (function($){ 
-    $(document).ready(function() {
-      $(container).empty();
-      $(container).buildHeader("My projects");
-      $(container).buildBody();
-      $(container).buildFooter();
-    });
+    $(container).empty();
+    $(container).buildHeader("My projects", username);
+    $(container).buildBody(username);
+    $(container).buildFooter();
   })(jQuery); 
 };
 
@@ -19,11 +17,13 @@ GitHubBadge.buildUserBadge = function() {
       ));
   };
   
-  $.fn.buildHeader = function(title) {
-    this.append($(
+  $.fn.buildHeader = function(title, username) {
+    var template = $.template(
       "<fieldset>"
-      + "<legend class='header'>" + title + "</legend>"
-      ));
+      + "<legend class='header'>${title} <span>("
+      +   "<a href='http://github.com/${username}'>${username}</a>)"
+      + "</span></legend>")
+    this.append(template, { title: title, username: username });
   };
 
   $.fn.buildFooter = function() {
