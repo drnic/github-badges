@@ -1,8 +1,19 @@
+/*  GitHub Badge, version 0.1.0
+ *  (c) 2008 Dr Nic Williams
+ *
+ *  GitHub Badge is freely distributable under
+ *  the terms of an MIT-style license.
+ *  For details, see the web site: http://github.com/drnic/github-badges/tree/master
+ *
+ *--------------------------------------------------------------------------*/
+
+var GithubBadge = {
+  Version: '0.1.0',
+};
+
 var GitHubBadge = GitHubBadge || {};
 
 GitHubBadge.Launcher = new function() {
-  var filename = "github-badge-launcher"; // without .js
-
   function requestContent( url, callback ) {
     // inserting via DOM fails in Safari 2.0, so brute force approach
     onLoadStr = (typeof callback == "undefined") ? "" : 'onload="' + callback + '()"';
@@ -21,8 +32,8 @@ GitHubBadge.Launcher = new function() {
   this.init = function() {
     var libraries = [
         [typeof jQuery, "ext/jquery"],
-        // ["undefined", "ext/jquery"],
-        [typeof jQuery != "undefined" && typeof jQuery.template, "ext/jquery.template"]
+        [typeof jQuery != "undefined" && typeof jQuery.template, "ext/jquery.template"],
+        [false, "github-badge"]
       ];
     var scripts = document.getElementsByTagName("script");
     for (var i=0; i < scripts.length; i++) {
@@ -47,7 +58,7 @@ GitHubBadge.Launcher = new function() {
     if(typeof jQuery == 'undefined' || typeof jQuery.template == 'undefined')
       throw("GitHub Badge requires jQuery and jQuery.template");
 
-    GitHubBadge.buildUserBadge();
+    GitHubBadge.buildUserBadge(GITHUB_USERNAME);
   }
 }
 

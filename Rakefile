@@ -52,8 +52,9 @@ task :dist do
     FileUtils.mkdir_p "website/dist"
     FileUtils.copy_file "dist/#{APP_FILE_NAME}",       "website/dist/#{APP_FILE_NAME}"
     FileUtils.copy_file "dist/#{APP_FILE_NAME}",       "website/dist/#{APP_NAME}-#{APP_VERSION}.js"
-    FileUtils.copy_file "dist/#{APP_BADGE_NAME}.js", "website/dist/#{APP_BADGE_FILE_NAME}"
+    FileUtils.copy_file "dist/#{APP_BADGE_NAME}.js", "website/dist/#{APP_BADGE_NAME}.js"
     FileUtils.copy_file "dist/#{APP_BADGE_NAME}.js", "website/dist/#{APP_BADGE_NAME}-#{APP_VERSION}.js"
+    FileUtils.cp_r("src/ext", "website/dist/ext")
   end
 end
 
@@ -63,7 +64,7 @@ Rake::PackageTask.new(APP_NAME, APP_VERSION) do |package|
   package.package_files.include(
     '[A-Z]*',
     'config/*.sample',
-    "dist/#{APP_FILE_NAME}",
+    "dist/**",
     'lib/**',
     'src/**',
     'script/**',
