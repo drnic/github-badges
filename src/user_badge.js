@@ -13,7 +13,7 @@ GitHubBadge.buildUserBadge = function(username) {
 
 GitHubBadge.loadUserInfo = function(data) {
   var template = $.template(
-    "<li>${name}</li>"
+    "<li><a href='${url}'>${name}</a></li>"
   );
   var list = $("<ul></ul>");
   $('#github-badge .body')

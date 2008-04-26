@@ -65,9 +65,9 @@
     "test that recent projects displayed": function() { with(this) {
       // $.getScript("file://../fixtures/mocked_user_data.js");
       GitHubBadge.loadUserInfo(GitHubBadge.mockedUserData);
-      var projects = badge.find('.body li');
+      var projects = badge.find('.body li a');
       assert(projects.size() > 0, 'Should be some projects');
-      assertEqual(10, projects.filter(':visible').size());
+      assertEqual(10, $('.body li:visible').size());
       assertEqual("ruby-on-rails-tmbundle", projects.filter(':eq(0)').html());
       assertEqual("javascript-unittest-tmbundle", projects.filter(':eq(1)').html());
       assertEqual("newjs", projects.filter(':eq(2)').html());
