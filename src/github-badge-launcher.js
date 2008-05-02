@@ -1,17 +1,10 @@
 var GitHubBadge = GitHubBadge || {};
 
 GitHubBadge.Launcher = new function() {
-  function requestContent( url, callback ) {
-    // inserting via DOM fails in Safari 2.0, so brute force approach
-    onLoadStr = (typeof callback == "undefined") ? "" : 'onload="' + callback + '()"';
-    document.write('<script ' + onLoadStr + 'type="text/javascript" src="'+url+'"></script>');
-  }
-  
   function requestStylesheet( url ) {
     document.write('<link rel="stylesheet" href="'+url+'" type="text/css"></link>');
   }
   
-
   function basePath() {
     var scripts = document.getElementsByTagName("script");
     for (var i=0; i < scripts.length; i++) {
@@ -36,9 +29,9 @@ GitHubBadge.Launcher = new function() {
           if (libraries[i][0] == "undefined" || !libraries[i][0]) {
             var url = path + libraries[i][1] + ".js";
             if (i == libraries.length - 1) {
-              requestContent(url, "GitHubBadge.Launcher.loadedLibraries");
+              this.requestContent(url, "GitHubBadge.Launcher.loadedLibraries");
             } else {
-              requestContent(url);
+              this.requestContent(url);
             }
           }
         }
@@ -56,7 +49,15 @@ GitHubBadge.Launcher = new function() {
     
     GitHubBadge.buildUserBadge(GITHUB_USERNAME);
   }
+};
+
+GitHubBadge.Launcher.requestContent = function( url, callback ) {
+  // inserting via DOM fails in Safari 2.0, so brute force approach
+  if ("jQuery" in window) {
+    jQuery.getScript(url,callback);
+  } else {
+    onLoadStr = (typeof callback == "undefined") ? "" : 'onload="' + callback + '()"';
+    document.write('<script ' + onLoadStr + 'type="text/javascript" src="'+url+'"></script>');
+  }
 }
 
-
-GitHubBadge.Launcher.init();
