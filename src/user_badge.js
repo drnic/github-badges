@@ -31,7 +31,8 @@ GitHubBadge.loadUserInfo = function(data) {
       .append(list)
       .append(showMore); 
     list = list.find('ul');
-    orderedRepos = data.user.repositories.sort(GitHubBadge.compareRepos)
+    orderedRepos = data.user.repositories.reverse();
+    // orderedRepos = data.user.repositories.sort(GitHubBadge.compareReposByPopularity)
     $.each(orderedRepos, function(index) {
       list.append(template, this);
     });
@@ -39,7 +40,7 @@ GitHubBadge.loadUserInfo = function(data) {
   })(jQuery); 
 };
 
-GitHubBadge.compareRepos = function(repo1, repo2) {
+GitHubBadge.compareReposByPopularity = function(repo1, repo2) {
   var properties = ['network', 'watched'];
   for (var i=0; i < properties.length; i++) {
     var comparison = GitHubBadge.compareReposProperty(repo1, repo2, properties[i]);

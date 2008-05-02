@@ -71,7 +71,7 @@
       GitHubBadge.loadUserInfo(GitHubBadge.mockedUserData);
     },
     
-    "test that recent projects displayed": function() { with(this) {
+    "xtest that recent projects displayed": function() { with(this) {
       var projects = badge.find('.repos ul#repo_listing li a');
       assert(projects.size() > 0, 'Should be some projects');
       assertEqual(10, badge.find('.body li:visible').size());
@@ -80,6 +80,14 @@
       assertEqual("newjs", projects.filter(':eq(2)').html());
     }},
 
+    "test that projects displayed in reverse order": function() { with(this) {
+      var projects = badge.find('.repos ul#repo_listing li a');
+      assert(projects.size() > 0, 'Should be some projects');
+      assertEqual(10, badge.find('.body li:visible').size());
+      assertEqual("hobo", projects.filter(':eq(0)').html());
+      assertEqual("rspec_on_rails_nested_scaffold", projects.filter(':eq(1)').html());
+    }},
+  
     "test that 'show remaining' unhides remaining projects": function() { with(this) {
       var link = $('#github-badge a.more');
       assertEqual(1, link.size());
