@@ -76,6 +76,10 @@
       GitHubBadge.loadUserInfo(GitHubBadge.mockedUserData);
     },
     
+    teardown: function() {
+      window.GITHUB_LIST_LENGTH = 10;
+    },
+    
     "test that popular projects displayed first, and the rest displayed in reverse order": function() { with(this) {
       var projects = badge.find('.repos ul#repo_listing li a');
       assert(projects.size() > 0, 'Should be some projects');
@@ -94,6 +98,13 @@
       assertEqual(10, badge.find('.body li:visible').size());
       link.click();
       assertEqual(badge.find('.body li').size(), badge.find('.body li:visible').size());
+    }},
+
+    
+    "test that only 5 items are shown (GITHUB_LIST_LENGTH)": function() { with(this) {
+      window.GITHUB_LIST_LENGTH = 5;
+      GitHubBadge.loadUserInfo(GitHubBadge.mockedUserData);
+      assertEqual(5, $('div#github-badge .body li:visible').size());
     }},
 
     "test that widget looks nice": function() { with(this) {

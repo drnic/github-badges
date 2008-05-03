@@ -24,6 +24,7 @@
   
   <script type="text/javascript" charset="utf-8">
     GITHUB_USERNAME = 'drnic';
+    GITHUB_LIST_LENGTH = 5;
     var GitHubBadge = GitHubBadge || {};
     GitHubBadge.buildUserBadgeExecuted = false;
     GitHubBadge.buildUserBadge = function() {
@@ -51,7 +52,9 @@
 
     "test that badge built": function() { with(this) {
       assert(GitHubBadge.buildUserBadgeExecuted, 'Badge code was not executed');
-    }}
+    }},
+
+    
   }, {testLog: "testlog"}); 
   // For each Test.UnitRunner instance, specify the element id where results will be
   // published; e.g. <div id="testlog"/> above.

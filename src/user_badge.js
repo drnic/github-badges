@@ -42,7 +42,9 @@ GitHubBadge.loadUserInfo = function(data) {
     $.each(orderedRepos, function(index) {
       list.append(template, this);
     });
-    $('#github-badge .body li:gt(9)').hide(); // hide extras
+    var showLimit = window.GITHUB_LIST_LENGTH || 10;
+    
+    $('#github-badge .body li:gt(' + (showLimit - 1) + ')').hide(); // hide extras
   })(jQuery); 
 };
 

@@ -3,20 +3,21 @@ h1. GitHub Badge
 h2. What
 
 Want to show off your projects on github to world? 
-Then a sexy badge on your blog would be awesome.
-
-Its still under development, but above is a pseudo-live
-demonstration of the badge.
+Then a sexy badge on your blog would be awesome. Like the one above, but 
+for your github projects and forks. So, its awesomer.
 
 h2. Installation
 
 <pre syntax="html"><div id="github-badge"></div>
 <script type="text/javascript" charset="utf-8">
   GITHUB_USERNAME="drnic";
+  GITHUB_LIST_LENGTH=10;
   GITHUB_HEAD="h2"; // default is <div>
 </script>
 <script src="http://drnicjavascript.rubyforge.org/github_badge/dist/github-badge-launcher.js" type="text/javascript"></script>
 </pre>
+
+Only GITHUB_USERNAME is a required pre-set variable. The others above show the defaults, and can be changed by being specified.
 
 h2. Existing installations/demonstrations
 
