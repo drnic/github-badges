@@ -28,8 +28,7 @@ GitHubBadge.loadUserInfo = function(data) {
     var list = $("<div class='repos'><ul id='repo_listing'></ul></div>");
     $('#github-badge .body')
       .empty()
-      .append(list)
-      .append(showMore); 
+      .append(list);
     list = list.find('ul');
     orderedRepos = data.user.repositories.sort(function(repo1, repo2) {
       var properties = ['network', 'watched'];
@@ -45,6 +44,8 @@ GitHubBadge.loadUserInfo = function(data) {
     var showLimit = window.GITHUB_LIST_LENGTH || 10;
     
     $('#github-badge .body li:gt(' + (showLimit - 1) + ')').hide(); // hide extras
+    if ($('#github-badge .body li').is(':hidden'))
+      $('#github-badge .body').append(showMore); 
   })(jQuery); 
 };
 

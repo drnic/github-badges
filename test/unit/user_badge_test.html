@@ -106,11 +106,18 @@
       GitHubBadge.loadUserInfo(GitHubBadge.mockedUserData);
       assertEqual(5, $('div#github-badge .body li:visible').size());
     }},
+    
 
     "test that widget looks nice": function() { with(this) {
       info("Doing nothing so tester/dev can play with widget after all tests run");
-    }}
+    }},
 
+    "test that no 'Show more' link if no extra items to show": function() { with(this) {
+      GitHubBadge.loadUserInfo(GitHubBadge.smallMockedUserData);
+      assertEqual(0, $('.more').size(), 'No need for "Show more" link');
+    }},
+
+    
     
       
   }, {testLog: "testlog-showdata"}); 
