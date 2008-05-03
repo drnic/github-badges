@@ -1,4 +1,12 @@
-== 0.0.1 2008-04-26
+== 1.0.2 2008-05-04
+
+* Apply "background: none" to #github-badge li css to override anything from target's css.
+
+== 1.0.1 2008-05-03
+
+* Hide 'Show more' link if no extra items to show
+
+== 1.0.0 2008-04-26
 
 * 1 major enhancement:
   * Initial release
