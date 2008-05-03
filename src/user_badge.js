@@ -31,22 +31,19 @@ GitHubBadge.loadUserInfo = function(data) {
       .append(list)
       .append(showMore); 
     list = list.find('ul');
-    orderedRepos = data.user.repositories.reverse();
-    // orderedRepos = data.user.repositories.sort(GitHubBadge.compareReposByPopularity)
+    orderedRepos = data.user.repositories.sort(function(repo1, repo2) {
+      var properties = ['network', 'watched'];
+      for (var i=0; i < properties.length; i++) {
+        var comparison = GitHubBadge.compareReposProperty(repo1, repo2, properties[i]);
+        if (comparison != 0) return comparison;
+      };
+      return data.user.repositories.indexOf(repo2) - data.user.repositories.indexOf(repo1);
+    })
     $.each(orderedRepos, function(index) {
       list.append(template, this);
     });
     $('#github-badge .body li:gt(9)').hide(); // hide extras
   })(jQuery); 
-};
-
-GitHubBadge.compareReposByPopularity = function(repo1, repo2) {
-  var properties = ['network', 'watched'];
-  for (var i=0; i < properties.length; i++) {
-    var comparison = GitHubBadge.compareReposProperty(repo1, repo2, properties[i]);
-    if (comparison != 0) return comparison;
-  };
-  return 0;
 };
 
 GitHubBadge.compareReposProperty = function(repo1, repo2, property) {
