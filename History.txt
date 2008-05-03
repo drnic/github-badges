@@ -1,6 +1,7 @@
 == 1.0.2 2008-05-04
 
 * Apply "background: none" to #github-badge li css to override anything from target's css.
+* Apply "font: black"
 
 == 1.0.1 2008-05-03
 

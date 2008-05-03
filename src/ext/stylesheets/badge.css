@@ -2,6 +2,7 @@
   padding: .2em;
   background-color: white;
   font: 12px "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;
+  color: black;
 }
 
 #github-badge a {
@@ -11,7 +12,12 @@
 }
 
 #github-badge a:hover {
+  color: #4183c4; /* blue */
   text-decoration: underline;
+}
+
+#github-badge a:visited {
+  color: #4183c4; /* blue */
 }
 
 #github-badge div.header {
