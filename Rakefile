@@ -12,7 +12,7 @@ require 'rake/packagetask'
 
 $:.unshift File.dirname(__FILE__) + "/lib"
 
-APP_VERSION  = '1.0.2'
+APP_VERSION  = File.open('History.txt').read.split("\n").first.match(/\b[\d\.]+\b/)[0]
 APP_NAME     = 'github-badge'
 RUBYFORGE_PROJECT = 'drnicjavascript'
 APP_FILE_NAME= "#{APP_NAME}.js"
@@ -26,6 +26,10 @@ APP_PKG_DIR  = File.join(APP_ROOT, 'pkg')
 
 
 unless ENV['rakefile_just_config']
+
+task :version do
+  puts APP_VERSION
+end
 
 task :default => [:dist, :package, :clean_package_source]
 
