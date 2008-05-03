@@ -22,6 +22,8 @@ Only GITHUB_USERNAME is a required pre-set variable. The others above show the d
 h2. Existing installations/demonstrations
 
 * "Dr Nic Williams":http://drnicwilliams.com
+* "Chris Wanstrath":http://ozmm.org/ (creator of GitHub)
+* "James Rosen":http://100essays.blogspot.com/
 
 h2. Forum
 
