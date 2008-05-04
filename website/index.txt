@@ -24,6 +24,8 @@ h2. Existing installations/demonstrations
 * "Dr Nic Williams":http://drnicwilliams.com
 * "Chris Wanstrath":http://ozmm.org/ (creator of GitHub)
 * "James Rosen":http://100essays.blogspot.com/
+* "Mike Mondragon":http://blog.mondragon.cc/
+* "ihower":http://ihower.idv.tw/blog/
 
 h2. Forum
 
