@@ -16,6 +16,7 @@ GitHubBadge.loadUserInfo = function(data) {
       "<li class='public'>"
       +  "<img src='http://github.com/images/icons/public.png' alt='public'>"
       +  "<strong><a href='${url}'>${name}</a></strong>"
+      +  "<div class='description'>${description}</div>"
       +"</li>"
     );
     var showMore = $("<div><a href='#' class='more'>Show more</a></div>")
@@ -43,7 +44,14 @@ GitHubBadge.loadUserInfo = function(data) {
     });
     var showLimit = window.GITHUB_LIST_LENGTH || 10;
     
-    $('#github-badge .body li:gt(' + (showLimit - 1) + ')').hide(); // hide extras
+    $('#github-badge .body li')
+    .click(function(event) {
+      $(event.target).find('.description').show();
+    })
+    .find('.description')
+      .hide()
+      .end()
+    .filter(':gt(' + (showLimit - 1) + ')').hide() // hide extras
     if ($('#github-badge .body li').is(':hidden'))
       $('#github-badge .body').append(showMore); 
   })(jQuery); 

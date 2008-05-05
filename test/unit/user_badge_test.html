@@ -117,6 +117,15 @@
       assertEqual(0, $('.more').size(), 'No need for "Show more" link');
     }},
 
+    "test that clicking an item expands it to show description of project": function() { with(this) {
+      var item = badge.find('li:first');
+      var description = item.find('.description');
+      assertEqual(1, description.size(), 'Should be a project description');
+      assert(description.is(':hidden'), 'No description should be shown');
+      item.click();
+      assert(!description.is(':hidden'), 'Description should be shown');
+    }},
+
     
     
       
