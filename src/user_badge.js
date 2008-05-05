@@ -46,7 +46,7 @@ GitHubBadge.loadUserInfo = function(data) {
     
     $('#github-badge .body li')
     .click(function(event) {
-      $(event.target).find('.description').show();
+      $(event.target).find('.description').toggle();
     })
     .find('.description')
       .hide()
