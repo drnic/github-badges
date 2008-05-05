@@ -1,3 +1,7 @@
+== 1.1.0 2008-05-05
+
+* Project description is displayed/hidden when clicking an item
+
 == 1.0.2 2008-05-04
 
 * Apply "background: none" to #github-badge li css to override anything from target's css.
