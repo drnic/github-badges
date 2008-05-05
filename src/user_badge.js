@@ -13,7 +13,7 @@ GitHubBadge.buildUserBadge = function(username) {
 GitHubBadge.loadUserInfo = function(data) {
   (function($){ 
     var template = $.template(
-      "<li class='public'>"
+      "<li class='public clickable'>"
       +  "<img src='http://github.com/images/icons/public.png' alt='public'>"
       +  "<strong><a href='${url}'>${name}</a></strong>"
       +  "<div class='description'>${description}</div>"
@@ -46,7 +46,7 @@ GitHubBadge.loadUserInfo = function(data) {
     
     $('#github-badge .body li')
     .click(function(event) {
-      $(event.target).find('.description').toggle();
+      $(event.currentTarget).find('.description').toggle();
     })
     .find('.description')
       .hide()

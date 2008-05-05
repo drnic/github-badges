@@ -119,6 +119,7 @@
 
     "test that clicking an item toggles it to show description of project": function() { with(this) {
       var item = badge.find('li:first');
+      assert(item.is('.clickable'));
       var description = item.find('.description');
       assertEqual(1, description.size(), 'Should be a project description');
       assert(description.is(':hidden'), 'No description should be shown');

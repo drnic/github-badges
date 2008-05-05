@@ -62,3 +62,8 @@
 #github-badge .repos .public a {
   background-color: #f0f0f0;
 }
+
+#github-badge .clickable {
+	cursor:	pointer; 
+	cursor:	hand;
+}
