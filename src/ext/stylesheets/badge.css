@@ -63,6 +63,10 @@
   background-color: #f0f0f0;
 }
 
+#github-badge .repos .public .description {
+  margin-left: 18px;
+}
+
 #github-badge .clickable {
 	cursor:	pointer; 
 	cursor:	hand;
