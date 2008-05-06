@@ -51,18 +51,37 @@ for your github projects and forks. So, its awesomer.</p>
 	<h2>Installation</h2>
 
 
+	<p>Sample <span class="caps">HTML</span> to paste into your blog sidebar:</p>
+
+
+	<p><pre class='syntax'>&lt;div id=&quot;github-badge&quot;&gt;&lt;/div&gt;
+&lt;script type=&quot;text/javascript&quot; charset=&quot;utf-8&quot;&gt;
+  GITHUB_USERNAME=&quot;drnic&quot;;
+&lt;/script&gt;
+&lt;script src=&quot;http://drnicjavascript.rubyforge.org/github_badge/dist/github-badge-launcher.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;</pre></p>
+
+
+	<p>A full outline of available options:</p>
+
+
 	<p><pre class='syntax'>&lt;div id=&quot;github-badge&quot;&gt;&lt;/div&gt;
 &lt;script type=&quot;text/javascript&quot; charset=&quot;utf-8&quot;&gt;
   GITHUB_USERNAME=&quot;drnic&quot;;
   GITHUB_LIST_LENGTH=10;
   GITHUB_HEAD=&quot;div&quot;; // e.g. change to &quot;h2&quot; for wordpress sidebars
+  GITHUB_THEME=&quot;white&quot;; // try 'black'
 &lt;/script&gt;
 &lt;script src=&quot;http://drnicjavascript.rubyforge.org/github_badge/dist/github-badge-launcher.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
 </pre></p>
 
 
-	<p>Only <span class="caps">GITHUB</span>_USERNAME is a required pre-set variable. The others above show the defaults, and can be changed by being specified.</p>
+	<p>Only <code>GITHUB_USERNAME</code> is a required pre-set variable. The others above show the defaults, and can be changed by being specified.</p>
 
+
+	<p><a href="http://skitch.com/drnic/khme/github-badge-black-theme"><img src="http://img.skitch.com/20080506-1cykawtg246kqibnuhtithqhsm.jpg" border=0 alt="github-badge black theme" /></a></p>
+
+
+<code>Black background?</code> If your site has a black background the badge will automatically attempt to use the black_badge.css theme. If it doesn&#8217;t trigger for your site add the <code>GITHUB_THEME='black'</code> code to the configuration above.
 
 	<h2>Existing installations/demonstrations</h2>
 

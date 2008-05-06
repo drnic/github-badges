@@ -25,8 +25,12 @@ the following snippet into your blog sidebar.
       GITHUB_USERNAME="drnic";
       GITHUB_LIST_LENGTH=10;
       GITHUB_HEAD="div"; // e.g. change to "h2" for wordpress sidebars
+      GITHUB_THEME="white"; // try 'black'
     </script>
     <script src="http://drnicjavascript.rubyforge.org/github_badge/dist/github-badge-launcher.js" type="text/javascript"></script>
+
+Black background? If your site has a black background the badge will automatically attempt
+to use the `black_badge.css` theme. If it doesn't trigger for your site add the `GITHUB_THEME='black'` code to the configuration above.
 
 Website
 =======
