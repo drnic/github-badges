@@ -51,7 +51,8 @@ GitHubBadge.Launcher = new function() {
     if(typeof jQuery == 'undefined' || typeof jQuery.template == 'undefined')
       throw("GitHub Badge requires jQuery and jQuery.template");
     
-    if (jQuery('#github-badge').parent().css('background-color') == 'rgb(0, 0, 0)') {
+    var is_black = ("GITHUB_THEME" in window && GITHUB_THEME) || 'white';
+    if (is_black == 'black' || jQuery('#github-badge').parent().css('background-color') == 'rgb(0, 0, 0)') {
       requestStylesheet(this.path + 'ext/stylesheets/black_badge.css', 'black_badge');
     } else {
       requestStylesheet(this.path + 'ext/stylesheets/badge.css', 'badge');
