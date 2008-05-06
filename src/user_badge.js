@@ -11,7 +11,7 @@ GitHubBadge.buildUserBadge = function(username) {
 };
 
 GitHubBadge.loadUserInfo = function(data) {
-  (function($){ 
+  (function($){
     var template = $.template(
       "<li class='public clickable'>"
       +  "<img src='http://github.com/images/icons/public.png' alt='public'>"
@@ -54,6 +54,7 @@ GitHubBadge.loadUserInfo = function(data) {
     .filter(':gt(' + (showLimit - 1) + ')').hide() // hide extras
     if ($('#github-badge .body li').is(':hidden'))
       $('#github-badge .body').append(showMore); 
+
   })(jQuery); 
 };
 

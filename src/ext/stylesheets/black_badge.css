@@ -1,7 +1,7 @@
 #github-badge {
   padding: .2em;
-  color: black;
-  background-color: white;
+  color: white;
+  background-color: black;
   font: 12px "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;
 }
 
@@ -54,8 +54,8 @@
 }
 
 #github-badge .repos .public {
-  border: 1px solid #d8d8d8;
-  background-color: #f0f0f0;
+  border: 1px solid rgb(50,50,50);
+  background-color: rgb(20,20,20);
 }
 
 #github-badge .repos .public .description {

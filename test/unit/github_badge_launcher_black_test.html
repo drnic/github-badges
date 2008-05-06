@@ -7,6 +7,11 @@
   <script src="../assets/jsunittest.js" type="text/javascript"></script>
   
   <link rel="stylesheet" href="../assets/unittest.css" type="text/css" />
+  <style type="text/css" media="screen">
+    div#sample {
+      background-color: black;
+    }
+  </style>
 </head>
 <body>
 
@@ -45,6 +50,11 @@
 // <![CDATA[
 
   new Test.Unit.Runner({
+    setup: function() {
+      this.badge = $('#github-badge');
+      this.black = "rgb(0, 0, 0)";
+    },
+    
     "test that jQuery + jQuery.template loaded": function() { with(this) {
       assert(jQuery, 'jQuery not loaded');
       assert(jQuery.template, 'jQuery.template not loaded');
@@ -54,9 +64,13 @@
       assert(GitHubBadge.buildUserBadgeExecuted, 'Badge code was not executed');
     }},
 
-    "test that badge.css loaded": function() { with(this) {
-      var css = $('style#badge');
-      assertEqual(1, css.size(), 'No style#badge added');
+    "test that background behind badge is black": function() { with(this) {
+      assertEqual(black, badge.parent().css('background-color'));
+    }},
+
+    "test that black_badge.css loaded": function() { with(this) {
+      var css = $('style#black_badge');
+      assertEqual(1, css.size(), 'No style#black_badge added');
     }},
     
   }, {testLog: "testlog"}); 

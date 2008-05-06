@@ -26,6 +26,7 @@ h2. Existing installations/demonstrations
 * "James Rosen":http://100essays.blogspot.com/
 * "Mike Mondragon":http://blog.mondragon.cc/
 * "ihower":http://ihower.idv.tw/blog/
+* "Jon Maddox":http://www.simplisticcomplexity.com/
 
 h2. Forum
 
