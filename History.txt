@@ -1,3 +1,7 @@
+== 1.2.1 2008-05-07
+
+* 'Show more' -> 'Show all (n)'
+
 == 1.2.0 2008-05-06
 
 * Alternate theme: black_badge.js - automatically attempts to detect

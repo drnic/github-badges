@@ -19,13 +19,6 @@ GitHubBadge.loadUserInfo = function(data) {
       +  "<div class='description'>${description}</div>"
       +"</li>"
     );
-    var showMore = $("<div><a href='#' class='more'>Show more</a></div>")
-      .find('a')
-      .click(function(event) { 
-        $('#github-badge .body li').show(); 
-        $('#github-badge .more').hide();
-        return false;
-      });
     var list = $("<div class='repos'><ul id='repo_listing'></ul></div>");
     $('#github-badge .body')
       .empty()
@@ -44,6 +37,14 @@ GitHubBadge.loadUserInfo = function(data) {
     });
     var showLimit = window.GITHUB_LIST_LENGTH || 10;
     
+    var showMore = $("<div><a href='#' class='more'>Show all (" + orderedRepos.length + ")</a></div>")
+      .find('a')
+      .click(function(event) { 
+        $('#github-badge .body li').show(); 
+        $('#github-badge .more').hide();
+        return false;
+      });
+
     $('#github-badge .body li')
     .click(function(event) {
       $(event.currentTarget).find('.description').toggle();
