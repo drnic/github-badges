@@ -3,8 +3,8 @@ var GitHubBadge = GitHubBadge || {};
 GitHubBadge.Launcher = new function() {
   function requestStylesheet( url, style_id ) {
     if ("jQuery" in window) {
-      jQuery('head').append(
-        jQuery('<style rel="stylesheet" type="text/css"></style>')
+      jQuery('head').prepend(
+        jQuery('<link rel="stylesheet" type="text/css"></link>')
         .attr('href', url)
         .attr('id', style_id)
       )
@@ -52,7 +52,7 @@ GitHubBadge.Launcher = new function() {
       throw("GitHub Badge requires jQuery and jQuery.template");
     
     var is_black = ("GITHUB_THEME" in window && GITHUB_THEME) || 'white';
-    if (is_black == 'black' || jQuery('#github-badge').parent().css('background-color') == 'rgb(0, 0, 0)') {
+    if (is_black == 'black' || jQuery.color.almostBlack(jQuery('#github-badge').parent().css('background-color'))) {
       requestStylesheet(this.path + 'ext/stylesheets/black_badge.css', 'black_badge');
     } else {
       requestStylesheet(this.path + 'ext/stylesheets/badge.css', 'badge');

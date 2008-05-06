@@ -7,6 +7,7 @@
 
 #github-badge a {
   color: #4183c4; /* blue */
+  background-color: black;
   text-decoration: none;
 }
 
@@ -44,10 +45,6 @@
   background: transparent none repeat scroll 0%;
 }
 
-#github-badge .watching li {
-  font-size: 110%;
-}
-
 #github-badge .repos img {
   padding-right: .2em;
   vertical-align: middle;
@@ -55,6 +52,10 @@
 
 #github-badge .repos .public {
   border: 1px solid rgb(50,50,50);
+  background-color: rgb(20,20,20);
+}
+
+#github-badge .repos .public a {
   background-color: rgb(20,20,20);
 }
 

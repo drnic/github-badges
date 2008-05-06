@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="../assets/unittest.css" type="text/css" />
   <style type="text/css" media="screen">
     div#sample {
-      background-color: black;
+      background-color: #202020;
     }
   </style>
 </head>
@@ -30,16 +30,11 @@
   <script type="text/javascript" charset="utf-8">
     GITHUB_USERNAME = 'drnic';
     GITHUB_LIST_LENGTH = 5;
-    var GitHubBadge = GitHubBadge || {};
-    GitHubBadge.buildUserBadgeExecuted = false;
-    GitHubBadge.buildUserBadge = function() {
-      GitHubBadge.buildUserBadgeExecuted = true;
-    };
   </script>
   <!-- Put sample/test html here -->
   <div id="sample">
     <div id="github-badge" width="150px"></div>
-    <script src="../../src/github-badge-launcher.js" type="text/javascript"></script>
+    <script src="../../dist/github-badge-launcher.js" type="text/javascript"></script>
     <script type="text/javascript" charset="utf-8">
       GitHubBadge.Launcher.init();
     </script>
@@ -60,16 +55,12 @@
       assert(jQuery.template, 'jQuery.template not loaded');
     }},
 
-    "test that badge built": function() { with(this) {
-      assert(GitHubBadge.buildUserBadgeExecuted, 'Badge code was not executed');
-    }},
-
     "test that background behind badge is black": function() { with(this) {
-      assertEqual(black, badge.parent().css('background-color'));
+      assert($.color.almostBlack(badge.parent().css('background-color')));
     }},
 
     "test that black_badge.css loaded": function() { with(this) {
-      var css = $('style#black_badge');
+      var css = $('link#black_badge');
       assertEqual(1, css.size(), 'No style#black_badge added');
     }},
     

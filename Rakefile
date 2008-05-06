@@ -52,6 +52,7 @@ task :dist do
     FileUtils.copy_file "#{APP_NAME}.js", "#{APP_NAME}-#{APP_VERSION}.js"
     FileUtils.copy_file "#{APP_BADGE_NAME}.js", "#{APP_BADGE_NAME}-#{APP_VERSION}.js"
   end
+  FileUtils.cp_r "src/ext", "dist/ext"
   if File.directory?("website")
     FileUtils.rm_rf "website/dist" rescue nil
     FileUtils.mkdir_p "website/dist"
