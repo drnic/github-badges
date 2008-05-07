@@ -1,9 +1,11 @@
 var GitHubBadge = GitHubBadge || {};
 GitHubBadge.buildUserBadge = function(username) {
   (function($){ 
+		// var title = ("GITHUB_TITLE" in window && GITHUB_TITLE) || 'My projects';
+		var title = 'My projects';
     $('#github-badge')
       .empty()
-      .buildHeader("My projects", username)
+      .buildHeader(title, username)
       .buildBody(username)
       .buildFooter();
   })(jQuery);
