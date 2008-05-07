@@ -45,6 +45,7 @@ h2. Existing installations/demonstrations
 * "Mike Mondragon":http://blog.mondragon.cc/
 * "ihower":http://ihower.idv.tw/blog/
 * "Jon Maddox":http://www.simplisticcomplexity.com/
+* "Carlos Brando":http://www.nomedojogo.com/
 
 h2. Forum
 
