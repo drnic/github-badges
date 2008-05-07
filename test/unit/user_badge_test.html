@@ -49,8 +49,10 @@
     },
     
     "test that header displayed": function() { with(this) {
-      assertEqual(1, badge.find('.header').size());
-      username_link = badge.find('.header a');
+      var header = badge.find('.header');
+      assertEqual(1, header.size());
+      assertEqual('My projects', header.find('span.title').html());
+      username_link = header.find('a');
       assertEqual("drnic", username_link.html());
       assertEqual("http://github.com/drnic", username_link.attr('href'));
     }},
@@ -101,8 +103,8 @@
     }},
     
     "test that 'Show more' link includes total project count": function() { with(this) {
-      assertEqual(1, $('.more').size(), 'Missing "Show all" link');
-      assertEqual('Show all (32)', $('.more').html());
+      assertEqual(1, badge.find('.more').size(), 'Missing "Show all" link');
+      assertEqual('Show all (32)', badge.find('.more').html());
     }},
 
     

@@ -84,7 +84,7 @@ GitHubBadge.requestUserInfo = function(username) {
   $.fn.buildHeader = function(title, username) {
     var head = ("GITHUB_HEAD" in window) ? GITHUB_HEAD : "div";
     var template = $.template(
-      "<" + head + " class='header'>${title} <span>("
+      "<" + head + " class='header'><span class='title'>${title}</span> <span>("
       +   "<a href='http://github.com/${username}'>${username}</a>)"
       + "</span></" + head + ">")
     return this.append(template, { title: title, username: username });
