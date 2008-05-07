@@ -22,10 +22,12 @@ the following snippet into your blog sidebar.
 
     <div id="github-badge"></div>
     <script type="text/javascript" charset="utf-8">
-      GITHUB_USERNAME="drnic";
-      GITHUB_LIST_LENGTH=10;
-      GITHUB_HEAD="div"; // e.g. change to "h2" for wordpress sidebars
-      GITHUB_THEME="white"; // try 'black'
+      GITHUB_USERNAME = "drnic";
+      GITHUB_LIST_LENGTH = 10;
+      GITHUB_HEAD = "div"; // e.g. change to "h2" for wordpress sidebars
+      GITHUB_THEME = "white"; // try 'black'
+      // GITHUB_TITLE = "My Title"
+      // GITHUB_SHOW_ALL = "More..."
     </script>
     <script src="http://drnicjavascript.rubyforge.org/github_badge/dist/github-badge-launcher.js" type="text/javascript"></script>
 
