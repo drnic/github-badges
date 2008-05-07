@@ -38,7 +38,8 @@ GitHubBadge.loadUserInfo = function(data) {
     });
     var showLimit = window.GITHUB_LIST_LENGTH || 10;
     
-    var showMore = $("<div><a href='#' class='more'>Show all (" + orderedRepos.length + ")</a></div>")
+		var showAllName = ("GITHUB_SHOW_ALL" in window && GITHUB_SHOW_ALL) || 'Show all';
+    var showMore = $("<div><a href='#' class='more'>" + showAllName + " (" + orderedRepos.length + ")</a></div>")
       .find('a')
       .click(function(event) { 
         $('#github-badge .body li').show(); 
