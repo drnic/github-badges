@@ -14,7 +14,7 @@ Sample HTML to paste into your blog sidebar:
 <script type="text/javascript" charset="utf-8">
   GITHUB_USERNAME="drnic";
 </script>
-<script src="http://drnicjavascript.rubyforge.org/github_badge/dist/github-badge-launcher.js" type="text/javascript"></script></pre>
+<script src="http://drnic.github.com/github-badges/dist/github-badge-launcher.js" type="text/javascript"></script></pre>
 
 
 A full outline of available options:
@@ -28,7 +28,7 @@ A full outline of available options:
   GITHUB_TITLE = "My projects"
   GITHUB_SHOW_ALL = "Show all"
 </script>
-<script src="http://drnicjavascript.rubyforge.org/github_badge/dist/github-badge-launcher.js" type="text/javascript"></script>
+<script src="http://drnic.github.com/github-badges/dist/github-badge-launcher.js" type="text/javascript"></script>
 </pre>
 
 Only <code>GITHUB_USERNAME</code> is a required pre-set variable. The others above show the defaults, and can be changed by being specified.
