@@ -1,0 +1,69 @@
+#github-badge {
+  padding: .2em;
+  color: white;
+  background-color: black;
+  font: 12px "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;
+}
+
+#github-badge a {
+  color: #4183c4; /* blue */
+  background-color: black;
+  text-decoration: none;
+}
+
+#github-badge a:hover {
+  color: #4183c4; /* blue */
+  text-decoration: underline;
+}
+
+#github-badge a:visited {
+  color: #4183c4; /* blue */
+}
+
+#github-badge div.header {
+  font: 16px "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;
+}
+
+#github-badge .header span {
+  font: 15px "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;
+}
+
+#github-badge .footer {
+  font: 10px "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;
+}
+
+#github-badge .repos ul#repo_listing {
+  padding: .2em;
+  margin: 0px;
+}
+
+#github-badge .repos li {
+  list-style: none;
+  margin-bottom: 0.25em;
+  padding: .1em;
+  font-size: 110%;
+  background: transparent none repeat scroll 0%;
+}
+
+#github-badge .repos img {
+  padding-right: .2em;
+  vertical-align: middle;
+}
+
+#github-badge .repos .public {
+  border: 1px solid rgb(50,50,50);
+  background-color: rgb(20,20,20);
+}
+
+#github-badge .repos .public a {
+  background-color: rgb(20,20,20);
+}
+
+#github-badge .repos .public .description {
+  margin-left: 18px;
+}
+
+#github-badge .clickable {
+	cursor:	pointer; 
+	cursor:	hand;
+}
