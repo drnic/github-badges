@@ -1,3 +1,8 @@
+== 1.2.3 2009-01-04
+
+* Shortened footer message
+* Moved website to github pages: http://drnic.github.com/github-badges
+
 == 1.2.2 2008-05-07
 * Added GITHUB_TITLE and GITHUB_SHOW_ALL options.
 

@@ -93,7 +93,7 @@ GitHubBadge.requestUserInfo = function(username) {
   $.fn.buildFooter = function() {
     return this.append($(
       "<div class='footer'>"
-        + "<a href='http://drnicjavascript.rubyforge.org/github_badge'>GitHub Badge</a> "
+        + "<a href='http://drnic.github.com/github-badges'>GitHub Badge</a>"
         + " | "
         + "Written by <a href='http://drnicwilliams.com'>Dr Nic</a>"
       + "</div>"
