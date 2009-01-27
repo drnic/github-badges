@@ -57,9 +57,9 @@ Read the "8 steps for fixing other people's code":http://drnicwilliams.com/2007/
 
 You can fetch the source from:
 
-* github: "http://github.com/drnic/github_badges/tree/master":http://github.com/drnic/github_badges/tree/master
+* github: "http://github.com/drnic/github-badges/tree/master":http://github.com/drnic/github-badges/tree/master
 
-<pre>git clone git://github.com/drnic/github_badges.git</pre>
+<pre>git clone git://github.com/drnic/github-badges.git</pre>
 
 h2. License
 
