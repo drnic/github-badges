@@ -138,6 +138,12 @@ class OperaBrowser < Browser
   def initialize(path='c:\Program Files\Opera\Opera.exe')
     @path = path
   end
+
+  def supported?
+    if linux?
+      return system("which opera")
+    end
+  end
   
   def setup
     if windows?
