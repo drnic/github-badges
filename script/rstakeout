@@ -1,4 +1,4 @@
-#!/usr/local/bin/ruby -w
+#!/usr/bin/env ruby
 
 
 config = File.dirname(__FILE__) + "/../config/javascript_test_autotest.yml"
