@@ -102,7 +102,7 @@ class KonquerorBrowser < Browser
   @@konquerorConfig = File.join(@@configDir, 'konquerorrc')
 
   def supported?
-    linux?
+    linux? && File.exist?(@@configDir)
   end
 
   # Forces KDE's default browser to be Konqueror during the tests, and forces
