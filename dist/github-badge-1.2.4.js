@@ -1,4 +1,4 @@
-/*  GitHub Badge, version 1.2.3
+/*  GitHub Badge, version 1.2.4
  *  (c) 2008 Dr Nic Williams
  *
  *  GitHub Badge is freely distributable under
@@ -8,7 +8,7 @@
  *--------------------------------------------------------------------------*/
 
 var GithubBadge = {
-  Version: '1.2.3'
+  Version: '1.2.4'
 };
 
 (function($){
@@ -41,7 +41,7 @@ GitHubBadge.loadUserInfo = function(data) {
     var template = $.template(
       "<li class='public clickable'>"
       +  "<img src='http://github.com/images/icons/public.png' alt='public' title='${description}'>"
-      +  "<strong><a href='${url}' title='${description}'>${name}</a></strong>"
+      +  "<strong><a href='${url}' title='${description}' target='_blank'>${name}</a></strong>"
       +  "<div class='description'>${description}</div>"
       +"</li>"
     );
