@@ -4,10 +4,8 @@ GitHubBadge.Launcher = new function() {
   function requestStylesheet( url, style_id ) {
     if ("jQuery" in window) {
       jQuery('head').prepend(
-        jQuery('<link rel="stylesheet" type="text/css"></link>')
-        .attr('href', url)
-        .attr('id', style_id)
-      )
+        jQuery('<link rel="stylesheet" type="text/css" href="' + url + '" id="' + style_id + '"></link>')
+      );
     } else {
       document.write('<link rel="stylesheet" href="'+url+'" type="text/css"' + id_attr + '></link>');
     }
