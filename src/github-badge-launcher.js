@@ -4,10 +4,8 @@ GitHubBadge.Launcher = new function() {
   function requestStylesheet( url, style_id ) {
     if ("jQuery" in window) {
       jQuery('head').prepend(
-        jQuery('<link rel="stylesheet" type="text/css"></link>')
-        .attr('href', url)
-        .attr('id', style_id)
-      )
+        jQuery('<link rel="stylesheet" type="text/css" href="' + url + '" id="' + style_id + '"></link>')
+      );
     } else {
       document.write('<link rel="stylesheet" href="'+url+'" type="text/css"' + id_attr + '></link>');
     }
@@ -22,12 +20,22 @@ GitHubBadge.Launcher = new function() {
     }
   }
 
+  function waitAllLibraries(librariesCount) {
+    return function() {
+      librariesCount -= 1;
+      if(librariesCount == 0) {
+        GitHubBadge.Launcher.loadedLibraries();
+      }
+    };
+  }
+
   this.init = function() {
     var libraries = [
         [typeof jQuery, "ext/jquery"], 
         [typeof jQuery != "undefined" && typeof jQuery.template, "ext/jquery.template"],
         [typeof GitHubBadge.loadUserInfo, "github-badge"]
       ];
+    this.onLibraryLoaded = waitAllLibraries(libraries.length);
     var scripts = document.getElementsByTagName("script");
     for (var i=0; i < scripts.length; i++) {
       if (scripts[i].src && scripts[i].src.match(/github-badge-launcher\.js(\?.*)?/)) {
@@ -38,10 +46,12 @@ GitHubBadge.Launcher = new function() {
           if (libraryInstalled == "undefined" || !libraryInstalled) {
             var url = this.path + relativeLibraryPath + ".js";
             if (i == libraries.length - 1) {
-              this.requestContent(url, "GitHubBadge.Launcher.loadedLibraries");
+              this.requestContent(url, "GitHubBadge.Launcher.onLibraryLoaded");
             } else {
-              this.requestContent(url);
+              this.requestContent(url, "GitHubBadge.Launcher.onLibraryLoaded");
             }
+          } else {
+            this.onLibraryLoaded();
           }
         }
         break;
